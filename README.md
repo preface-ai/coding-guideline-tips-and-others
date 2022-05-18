@@ -1,10 +1,9 @@
-This is our general coding conventions at Preface
+# Coding Guideline
+This is our coding conventions & guideline at Preface
 
-# General
+## Comment
 
-## Do & Don’t
-
-### Don’t left meaningless comment
+### Don't comment unused code, remove them directly
 
 ```ruby
 ## ❌ DON'T left your removed code as comment
@@ -23,6 +22,8 @@ end
 ## This is because you can easily get back the removed content from git history
 ```
 
+### Don’t left meaningless comment
+
 ```javascript
 /* ❌ DON'T left comment when the block of code can speak to itself already */
 // update Counter
@@ -38,7 +39,9 @@ useEffect(() => {
 }, []);
 ```
 
-### Avoid naming thing in short form
+## Naming
+
+### Avoid naming things in short form
 
 ```ruby
 ## 🙅🏻‍♂️ No good. What does the `p` mean in `ptype`?
