@@ -1,5 +1,7 @@
 # Coding Guideline
-This is our coding conventions & guideline at Preface
+This is our coding conventions & guideline at Preface.
+
+We believe following coding conventions is a quick win for us to obtain bettter code quality with almost zero cost.
 
 ## Comment
 
