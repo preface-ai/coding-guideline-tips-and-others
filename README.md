@@ -24,7 +24,7 @@ end
 ## This is because you can easily get back the removed content from git history
 ```
 
-### Don’t left meaningless comment
+### Don’t leave meaningless comment
 
 ```javascript
 /* ❌ DON'T left comment when the block of code can speak to itself already */
