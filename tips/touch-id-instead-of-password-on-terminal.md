@@ -13,6 +13,8 @@ Every time when you want to do super user operation(`sudo`), you are being promp
   ```shell
   auth sufficient pam_tid.so
   ```
+  Like this:
  <img width="662" alt="Screenshot 2022-06-20 at 5 17 35 PM" src="https://user-images.githubusercontent.com/15152519/174569159-02120edc-c42d-4783-8646-a12a01d2b7db.png">
-* After this change, terminal will ask for touch ID instead of password when you use `sudo`
+
+* After saving your change, whenever you use `sudo`, terminal will ask for touch ID first instead of password.
 * Enjoy 😉
