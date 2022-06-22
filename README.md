@@ -83,3 +83,50 @@ for (let i = 0; i < 9; i++) {
 }
 ```
 
+## Arguments of function/method
+
+## Prefer named argument
+
+```ruby
+# In Ruby
+
+# ❌ Avoid this
+def add_line_item_to_cart(currency, user_id, chosen_product, course_id, cart, line_item, bootcamp_id, group_event_id)
+ # ...
+end
+
+# When call this:
+>>> add_line_item_to_cart("HKD", 123, product, 3, current_cart, li, nil, nil)
+# This is short but you cannot easily understand what each argument stand for.
+# This is also very easy to mess up the order when you try to call this function.
+
+# ✅ Prefer named when there are multiple arguments:
+def add_line_item_to_cart(currency:, user_id:, chosen_product:, course_id:, cart:, line_item:, bootcamp_id:, group_event_id:)
+ # ...
+end
+
+# When call this:
+>>> add_line_item_to_cart(
+      currency: "HKD",
+      user_id: 123,
+      chosen_product: product,
+      course_id: 3,
+      cart: current_cart,
+      line_item: li,
+      bootcamp_id: nil,
+      group_event_id: nil
+    )
+# This become verbose but you can easily understand what each argument means right away.
+```
+
+```python
+# In Python
+
+def do_something(a, b, c):
+ # ...
+
+# 🤔 Instead of call this via positional arguments:
+>>> do_something(6, 44, 731)
+# 👍🏻 Try to use keyword arguments:
+>>> do_something(a=6, b=44, c=731)
+```
