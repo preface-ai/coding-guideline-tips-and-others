@@ -29,6 +29,7 @@
 * [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
   * Code auto formatter using prettier
   * must install
+  * Also take a look on this [Tips](https://github.com/preface-ai/coding-guideline-tips-and-others/blob/main/tips/vs-code-extension-suggestion.md)
 * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   * Integrates ESLint JavaScript into VS Code.
 * [JavaScript and TypeScript Nightly](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
