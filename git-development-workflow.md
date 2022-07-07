@@ -22,8 +22,8 @@
     git pull
   ```
 * ⭐️ Advance Tips:
- * If you know git well enough, you can create and checkout your feature branch from latest remote `main` branch driectly without touching your local `main` branch
- * Feel free to do it in alternative way if you know exactly what you are doing.
+  * If you know git well enough, you can create and checkout your feature branch from latest remote `main` branch driectly without touching your local `main` branch
+  * Feel free to do it in alternative way if you know exactly what you are doing.
 
 ## Create & Checkout a new feature branch
 
