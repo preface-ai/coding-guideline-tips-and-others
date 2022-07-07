@@ -9,13 +9,13 @@
     * https://github.com/preface-ai/preface-nomad-b
       * Trunk branch `development`
 
-# Suggestes Git Development Workflow
+# Suggested Git Development Workflow
 
-## Make sure your local trunk branch is in sycn with remote
+## Make sure your local trunk branch is in sync with remote
 * Make sure you are at the trunk branch first
   ```bash
     git checkout main
-    # please replace main with develop or development accoundingly if you work on sepcific repository
+    # please replace main with develop or development accordingly if you work on specific repository
   ```
 * pull the latest code from remote
   ```bash
@@ -31,9 +31,9 @@
   * please replace `your-feature-branch-name` with your target feature branch naming
   * make sure the branch name is unique and easy to understand.
 
-## Work on your code chnage on the feature branch
+## Work on your code change on the feature branch
 
-* Try to split your task into multiple milestone and focus on singel milestone each time
+* Try to split your task into multiple milestone and focus on single milestone each time
 * when current milestone is complete, feel free to commit your code change in your local
 * you can have as many commits as you want because at the end they will become a single squashed commit after merge via Pull Request
 
@@ -57,14 +57,15 @@
 
 ## Request Code review & update your code based on feedback
 
-* Annotate your code reiewer in the Pull Request
+* Annotate your code reviewer in the Pull Request
 * Please send the link of this PR to your targeted Code Reviewer via our Slack Channel `team-tech`
 * Wait until your coder reviewer have left you feedback of the code(async-ly in the PR, or provided face-to-face)
-* Baseed on the feedback, if you need further code change, you can keep working on the same branch on your local and commit it.
+* Based on the feedback, if you need further code change, you can keep working on the same branch on your local and commit it.
 * You code changes will be reflected in the same PR after you `git push` it again👍🏻
 
 ## 🏁 Squash & Merge your Pull request to Trunk branch 
 
 * Once your Code reviewer approved your code change, you are free to merge this Pull request to the trunk branch
 * Please make sure using `Squash & merge` option to do the merge.
+
 
