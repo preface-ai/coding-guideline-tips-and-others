@@ -37,17 +37,25 @@
 ## Work on your code change on the feature branch
 
 * Try to split your task into multiple milestone and focus on single milestone each time
-* when current milestone is complete, feel free to commit your code change in your local
+* when current milestone is complete, feel free to commit your code change in your local.
+ * you can leverage your IDE(VS Code is our recommended IDE) to add & commit your code change interactively, or...
+ * you can use [`git add`](https://git-scm.com/docs/git-add) & [`git commit`](https://git-scm.com/docs/git-commit) to commit your code change if you want to go hardcore 👩🏼‍🎤
 * you can have as many commits as you want because at the end they will become a single squashed commit after merge via Pull Request
 
 ## Push your local feature branch to remote
 
 * When you finish all your milestone of the task, you can run following to push all of your commit in local feature branch to remote
+```bash
+git push --set-upstream origin your-feature-branch-name
+
+# In fact, you can just type `git push`, git will do nothing but hint you with the same command above.
+# this setting give you a option to change the remote branch name(branch name between local and remote are not necessary be the same)
+```
+* Alternatively, you can update your git config [push.autoSetupRemote](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote) to always set upstream with the same branch naming. You can just `git push` all alone after this change:
   ```bash
-    git push --set-upstream origin your-feature-branch-name
+  git config --global --add --bool push.autoSetupRemote true
   ```
-* or, you can just run `git push`, it will not work but hint you with the above command
-* If you already bind your local feature branch with the remote but you still want to commit new change:
+* Tips: If you already set your local feature branch to with the remote but you still want to commit new change:
   * you can still do it and push the change to remote again via `git push`
 
 ## Submit a Pull Request(PR) to trunk branch
@@ -64,7 +72,7 @@
 * Please send the link of this PR to your targeted Code Reviewer via our Slack Channel `team-tech`
 * Wait until your coder reviewer have left you feedback of the code(async-ly in the PR, or provided face-to-face)
 * Based on the feedback, if you need further code change, you can keep working on the same branch on your local and commit it.
-* You code changes will be reflected in the same PR after you `git push` it again👍🏻
+* Tips: No worry, whenever you commit and push your code change again, it will get reflected instantly to the same Pull Request👍🏻
 
 ## 🏁 Squash & Merge your Pull request to Trunk branch 
 
