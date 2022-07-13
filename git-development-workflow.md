@@ -78,5 +78,7 @@ git push --set-upstream origin your-feature-branch-name
 
 * Once your Code reviewer approved your code change, you are free to merge this Pull request to the trunk branch
 * Please make sure using `Squash & merge` option to do the merge.
+* Why?
+ * please google search the different between 3 Pull requests merge options `merge`, `Rebase & merge`, `Squash & merge` 😉
 
 
