@@ -1,4 +1,15 @@
+---
+sidebar_position: 1
+tags:
+  - coding
+  - namings
+  - ruby
+  - js
+  - python
+---
+
 # Coding Guideline
+
 This is our coding conventions & guideline at Preface.
 
 We believe following coding conventions is a quick win for us to obtain bettter code quality with almost zero cost.
@@ -14,7 +25,7 @@ if @target_date_timeslot.nil?
   slot = NomadTimeslot.new
   ...
 end
-  
+
 ## ✅ DO remove them before commit
 if @target_date_timeslot.nil?
   slot = NomadTimeslot.new
@@ -33,7 +44,7 @@ updateCounter();
 
 // create order
 const order = await createOrder(email);
-  
+
 /* ✅ DO left comment only when the block of code is hard to explain or understand */
 useEffect(() => {
   // this is a workaround of flashing unstyled page problem
@@ -47,14 +58,22 @@ useEffect(() => {
 
 ```ruby
 ## 🙅🏻‍♂️ No good. What does the `p` mean in `ptype`?
-create_table "products", force: :cascade do |t|
-  ...
-  t.string "ptype", null: false
+class CreateProduct < ActiveRecord::Migration[5.2]
+  def change
+    create_table "products", force: :cascade do |t|
+      ...
+      t.string "ptype", null: false
+    end
+  end
 end
 ## 👍🏻 Probably better now? It really depends on the context.
-create_table "products", force: :cascade do |t|
-  ...
-  t.string "product_type", null: false
+class CreateProduct < ActiveRecord::Migration[5.2]
+  def change
+    create_table "products", force: :cascade do |t|
+      ...
+      t.string "product_type", null: false
+    end
+  end
 end
 ```
 
