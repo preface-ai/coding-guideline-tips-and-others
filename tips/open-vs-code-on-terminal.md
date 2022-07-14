@@ -1,3 +1,5 @@
+# Open VS Code on Terminal
+
 In case you are not a lover of `vim` / `nano` in shell, you can try installing VS Code code cli.
 
 * In your VS Code editor,
