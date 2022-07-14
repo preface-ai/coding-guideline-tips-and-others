@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Preface Tech Hub",
+  title: "Preface Tech Team",
   tagline: "There isn't a thing that cannot be learnt.",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
@@ -76,7 +76,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Preface Tech Hub",
+        title: "Preface Coding Tech Team",
         logo: {
           alt: "Preface Coding Logo",
           src: "img/favicon_p.svg",
