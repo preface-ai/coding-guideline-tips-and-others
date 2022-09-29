@@ -102,6 +102,45 @@ for (let i = 0; i < 9; i++) {
 }
 ```
 
+## Follow progreamming language convention and be consistent
+
+```ruby
+# in Ruby
+# ✅ snake case for variable and file name; camel case for class name; Upper snake case for constant.
+class ThisIsCamelCaseClass
+  MAGIC_NUMBER = 234
+
+  def do_something_in_snake_case(some_variable)    
+    some_variable * MAGIC_NUMBER
+  end
+end
+```
+
+```js
+// in JS(React)
+// ✅ camel case for most thing; Upper snake case for constant
+const MAGIC_NUMBER = 234;
+
+export function FancyButton({onClick, someVariable}) {
+  const displayedNumber = someVariable * MAGIC_NUMBER;
+
+  return (
+    <button onClick={onClick}>{`${label} - ${displayedNumber}`}</button>
+  );
+}
+
+// exception, field key from API
+export function CourseCard({id}) {
+  const {isLoading, data} = useCourse(id);
+
+  return (
+    <div className="card">
+      {isLoading ? "Loading..." : data.display_text}
+    </div>
+  );
+}
+```
+
 ## Arguments of function/method
 
 ## Prefer named argument
