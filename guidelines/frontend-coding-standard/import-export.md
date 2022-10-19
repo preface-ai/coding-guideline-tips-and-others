@@ -2,6 +2,8 @@
 
 ## Prefer named import over default import
 
+Comparing with default import/export, named import/export is more clear and understandable.
+
 **_default import:_**
 
 ```js
@@ -22,9 +24,17 @@ import { Link } from "rebass/styled-components";
 
 - If `Link` doesn't exist, the import will fail.
 
-Comparing with default import/export, named import/export is more clear and understandable.
+One reason is that named import specifies the name of what is importing, which allows us to get an early error if we try to import something that does not exist. It also prevents causing inconsistency if different programmers use different names in default import.
+
+Another benefits of using named import/export is, multiple items/values can be imported/exported.
+
+```js
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+```
 
 ## Similar types of imports should be grouped adjacently
+
+By grouping similar types of imports together, we can easily search for imports we want from these lines.
 
 Example:
 
@@ -44,6 +54,8 @@ import { TimeslotInputSection } from "components/sections/TimeslotInputSection";
 
 ## CSS / Asset import should be placed at the bottom of all the imports
 
+It helps us to easily sort out the CSS and Asset import lines.
+
 Example:
 
 ```js
@@ -53,9 +65,4 @@ import PropTypes from "prop-types";
 
 import styles from "./ThankYouBanner.module.css";
 import annualPassBgImg from "../../public/images/annualPassBg.jpg";
-
-ThankYouBanner.propTypes = {
-  orderDate: PropTypes.string,
-  orderNo: PropTypes.number,
-};
 ```
