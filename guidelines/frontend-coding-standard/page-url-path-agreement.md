@@ -1,4 +1,4 @@
-# Page URL path convenstion
+# Page URL path agreement
 
 These are our agreement:
 
