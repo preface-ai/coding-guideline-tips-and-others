@@ -2,7 +2,7 @@
 
 ## Coding style
 - function should be stateless, pure
-- function should not have side effect, i.e. mutate other things that is not expected to change
+- function should not have side effect, i.e. interact with the environment outside the function, causing mutatation with other things that is not expected to change
 - input id instead of the object itself to the function, then query by id inside the function
 - function name should be describing the business action instead of implementation detail (except for private functions)
   - e.g. prefer `consume_discount_code` to `decrease_discount_code_quota_by_one`
