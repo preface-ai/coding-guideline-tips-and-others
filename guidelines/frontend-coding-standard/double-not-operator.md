@@ -1,6 +1,19 @@
 # Use `!!` to cast anything into boolean
 
-It is good to use double NOT `!!` when you want to ensure that a return value is always boolean type in methods that returns a boolean value based on some condition.
+Suggest using double not `!!` when we are expecting a boolean value in a expression
+
+```js
+const { data } = useEntity(id);
+// 🤔 avoid this
+if (data) {
+  // do something
+}
+
+// 👍🏻 Suggest this
+if (!!data) {
+  // do something
+}
+```
 
 ---
 
