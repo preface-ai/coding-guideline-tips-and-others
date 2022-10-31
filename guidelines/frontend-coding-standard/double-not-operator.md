@@ -31,7 +31,7 @@ each object is thus “truthy” or “falsy”. In other words, when converted 
 
 ---
 
-## Double Exclamation Operator `!!`
+## Double Exclamation `!!`
 
 - `!!` is not an operator.
 
