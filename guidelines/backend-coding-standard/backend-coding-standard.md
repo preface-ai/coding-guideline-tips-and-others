@@ -3,35 +3,40 @@
 ## Coding style
 - function should be stateless, pure
 - function should not have side effect, i.e. interact with the environment outside the function, causing mutatation with other things that is not expected to change
-- input id instead of the object itself to the function, then query by id inside the function
-- function name should be describing the business action instead of implementation detail (except for private functions)
-  - e.g. prefer `consume_discount_code` to `decrease_discount_code_quota_by_one`
-- be caution of n + 1 query
-- consider usage of in memory or query from db
-  - e.g. `select` / `where`
+- always name function / method with what(the behaviour) instead of how (the implementation).
 
 ## Modules
 - idea: consider `thin model, thin controller, fat service / modules`
-- only 入口 for controllers
+- entry point only for controllers / modules, but not for model
+  - reason: no recursive dependency
+- module / module function name should be describing the business action instead of implementation detail
+  - e.g. prefer `consume_discount_code` to `decrease_discount_code_quota_by_one`
 - encapsulation of business actions
 - include `singleton`
 - command only, query no need to be here
   - command query separation, grouping commands with similiar business domain together for easy changing business behavior
-- grouping with domain
-  - `fulfill_order` and `create_order` should be under `order` domain 
+- grouping with aggregate root
+  - `fulfill_order` and `create_order` should be under `order` domain
+- loose function-data coupling
+  - e.g. input id instead of the object itself to the function, then query by id inside the function
+
+## Controller
+- No business logic inside, business logic should be put in modules
 
 ## Services
-- idead: for 3rd party only
+- idea: for 3rd party only
 
 ## Test case
 - idea: consider not just testing for error, but also writing a spec for the components. e.g.: what is the expected functionality / behaviour.
 - testing input / output
 - No testing side effect
+- No testing implementation details
 ![backend testing guideline](../../static/img/testing-guideline-BE.png)
 
 ## Serializers
 - idea: consider it as a view, any logic should be handled in controller level.
 - no data query in serializer
+  - reason: it may causing n + 1 query
 
 ## API design
 - `data.code` is for FE to handle error case in codebase when validation cannot be checked in FE.
