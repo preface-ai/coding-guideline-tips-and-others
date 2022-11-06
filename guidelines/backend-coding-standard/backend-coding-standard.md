@@ -3,6 +3,7 @@
 ## Coding style
 - function should be stateless, pure
 - function should not have side effect, i.e. interact with the environment outside the function, causing mutatation with other things that is not expected to change
+- prevent using instance variables
 - always name function / method with what(the behaviour) instead of how (the implementation).
 - always use simpliest basic representation for route (not using resources, only: create etc...)
   - e.g. perfer `GET /users/something/:id` instead of 
