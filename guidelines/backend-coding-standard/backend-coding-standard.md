@@ -42,7 +42,6 @@
 - testing input / output
 - No testing side effect
 - No testing implementation details
-![backend testing guideline](../../static/img/testing-guideline-BE.png)
 
 ## Serializers
 - idea: consider it as a view, any logic should be handled in controller level.
