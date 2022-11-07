@@ -1,3 +1,4 @@
+# No bussiness logic in serializer
 # Description
 No bussiness / logic in serializer, should do it in contoller / module level.
 
