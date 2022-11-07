@@ -1,3 +1,4 @@
+# Aways write pure function
 # Description
 Write function which always returns the same set of results given a same set of arguments.
 
