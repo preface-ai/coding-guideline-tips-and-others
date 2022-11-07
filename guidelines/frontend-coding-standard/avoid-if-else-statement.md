@@ -23,7 +23,7 @@ function studentGrade(marks) {
   } else {
     return "You have failed the exam!";
   }
-}
+} // this can also be modified by ternary operator!
 ```
 
 It may be fine when there are only 2 options (just like the example above). However, when there are more than 2 options, it will become unclear to read.
@@ -125,7 +125,7 @@ Suggest to return early when an invalid condition evaluated. It can reduce the i
 
 ```js
 //example with out early returns
-//not suggested to use nested if-else
+//❌ not suggested to use nested if-else
 const login = (user) => {
   if (user && user.email && user.password) {
     const profile = getUserProfile(user.email);
@@ -144,7 +144,7 @@ const login = (user) => {
 };
 
 //example using early returns
-//suggested to use
+//✅ suggested to use
 const login = (user) => {
   if (!user || !user.email || !user.password) {
     return raiseError("email and password required");
