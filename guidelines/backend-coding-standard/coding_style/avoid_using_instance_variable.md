@@ -3,23 +3,32 @@ Avoid using instance variable. Always define as local variable if possible.
 
 # Example
 ```ruby
+# 🤔 Avoid this
 class SomeClass
-  # 🤔 Avoid this
-  @user = User.find_by(username: "student")
+  def context
+    @user = User.find_by(username: "student")
+    result = impure_function
+  end
+
   def impure_function
     # do something with the instance variable defined outside
-    return result = @user.do_something...
+    result = @user.do_something...
+  end
+end
+
+# 👍🏻 Suggest this
+class SomeClass
+  def context
+    user = User.find_by(username: "student")
+
+    # call the pure function wtih explict decleared parameters:
+    result = pure_function(user_id: user.id)
   end
 
-  # 👍🏻 Suggest this
-  user = User.find_by(username: "student")
   def pure_function(user_id:)
     user = User.find(user_id)
-    return user.do_something
+    user.do_something
   end
-
-  # then call the pure function wtih:
-  pure_function(user_id: user.id)
 end
 ```
 

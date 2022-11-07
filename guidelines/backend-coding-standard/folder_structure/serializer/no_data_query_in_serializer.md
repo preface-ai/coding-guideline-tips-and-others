@@ -22,17 +22,17 @@ class SomeCourseSerializer < ActiveModel::Serializer
 end
 
 # Then passing the parameters to the serializer from controller level
-class SomeContoller
-  course = Course.where(...)
-  bootcamps = Bootcamp.where(course: course, ...)
+# inside some contoller method...
+course = Course.where(...)
+bootcamps = Bootcamp.where(course: course, ...)
 
-  serialized_course = ActiveModelSerializers::SerializableResource.new(
-    course,
-    include: '**',
-    serializer: SomeCourseSerializer,
-    bootcamps: bootcamps,
-  ).as_json
-end
+serialized_course = ActiveModelSerializers::SerializableResource.new(
+  course,
+  include: '**',
+  serializer: SomeCourseSerializer,
+  bootcamps: bootcamps,
+).as_json
+
 ```
 
 # Reason

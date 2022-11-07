@@ -3,23 +3,19 @@ Write function which always returns the same set of results given a same set of 
 
 # Example
 ```ruby
-class SomeClass
-  @instance_variable = "some_variable"   # Avoid using instance variables as well (see avoid_using_instance_variables)
-
-  # 🤔 Avoid this
-  def impure_function
-    # do something with the instance variable defined outside
-    return result = @instance_variable.do_something...
-  end
-
-  # 👍🏻 Suggest this
-  def pure_function(variable:)
-    return variable.do_something
-  end
-
-  # then call the pure function wtih:
-  pure_function(variable: @instance_variable)
+# 🤔 Avoid this
+def impure_function
+  # do something with the instance variable defined outside
+  result = @instance_variable.do_something...
 end
+
+# 👍🏻 Suggest this
+def pure_function(variable:)
+  variable.do_something
+end
+
+# then call the pure function wtih the parameters explicitly:
+pure_function(variable: @instance_variable)
 ```
 
 # Reason
