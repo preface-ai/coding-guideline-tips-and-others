@@ -16,6 +16,8 @@ const approveFeatureA = true;
 const shouldDoX = false;
 ```
 
+---
+
 Many people use nagative variable name as they think that not doing something is way more important than actually doing it: “If we’re not not doing it, then we’re gonna prepare some stuff.”
 
 ```js
