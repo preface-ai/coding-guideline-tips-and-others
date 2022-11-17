@@ -167,65 +167,28 @@ const login = (user) => {
 ### Short circuit (Using && , || operators)
 
 - This method evaluate the expression using '&&' and '||' operators.
-- The Second operand in a logical AND (&& ) expression will be evaluated only if the first operand is true.
-- The second operand in an OR(||) expression is only evaluated if the first operand is false.
+- For example, the Second operand in a logical AND (&& ) expression will be evaluated only if the first operand is true.
 
 Example:
 
 ```js
-//using if -else statement
-const checkUserConnected = (name) => {
-  if (connectedUsers && connectedUsers[name]) {
-    return connectedUsers[name];
-  } else {
-    return raiseError("Not available");
-  }
-};
-
-//using short circuit method
-const checkUserConnected = (name) => {
+// using if-else
+// not suggested to use
+if (kid) {
   return (
-    (connectedUsers && connectedUsers[name]) || raiseError("Not available")
+    <ProfilePage>
+      <DisplayParentInfo />
+    </ProfilePage>
   );
-};
-```
+} else {
+  return null;
+}
 
-### Function delegation
+// using ternary operator
+// good to use
+return <ProfilePage>{kid ? <DisplayParentInfo /> : null}</ProfilePage>;
 
-This method replaces the bigger if-else blocks into individual functions and uses the short circuit method to evaluate the conditions.
-
-Example:
-
-```js
-//with out function delegation
-const checkOut = (item) => {
-  if (!item) {
-    return false;
-  } else if (!stockAvailable(item)) {
-    raiseError("Out of stock");
-    clearCart();
-    return false;
-  } else {
-    updateStock(item);
-    redirectToPayment();
-    return true;
-  }
-};
-
-//using function delegation
-const checkOut = (item) => {
-  const outOfStock = () => {
-    raiseError("Out of stock");
-    clearCart();
-    return false;
-  };
-
-  const doCheckOut = () => {
-    updateStock(item);
-    redirectToPayment();
-    return true;
-  };
-
-  return item && (stockAvailable(item) ? doCheckOut() : outOfStock());
-};
+// using short circuit &&
+// good to use in this case
+return <ProfilePage>{kid && <DisplayParentInfo />}</ProfilePage>;
 ```
