@@ -185,10 +185,10 @@ if (kid) {
 }
 
 // using ternary operator
-// good to use
+// ✅ good to use
 return <ProfilePage>{kid ? <DisplayParentInfo /> : null}</ProfilePage>;
 
 // using short circuit &&
-// good to use in this case
+// ✅ good to use in this case
 return <ProfilePage>{kid && <DisplayParentInfo />}</ProfilePage>;
 ```
