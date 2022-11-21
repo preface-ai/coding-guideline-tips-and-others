@@ -5,18 +5,21 @@ Write function which always returns the same set of results given a same set of 
 # Example
 ```ruby
 # 🤔 Avoid this
+@user = User.first
 def impure_function
   # do something with the instance variable defined outside
-  result = @instance_variable.do_something...
+  @user.update(name: 'some name')
 end
 
 # 👍🏻 Suggest this
-def pure_function(variable:)
-  variable.do_something
+user = User.first
+
+def pure_function(user:)
+  user.update(name: 'some name')
 end
 
 # then call the pure function wtih the parameters explicitly:
-pure_function(variable: @instance_variable)
+updated_user = pure_function(user: user)
 ```
 
 # Reason
