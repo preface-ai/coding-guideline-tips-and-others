@@ -10,12 +10,12 @@ onAlertClick = { handleAlertClick };
 onFormSubmit = { handleFormSubmit };
 ```
 
-For Props:
+**For Props:**
 
 - if you are creating component and exposing event hooks (call on event), those props would be `on`.
 - e.g. `onClick`, `onHover`, `onUsernameChanged`, `onError`
 
-For Functions:
+**For Functions:**
 
 - if you are consuming another component, you want to add handling in response to these events, so you use `handle`
 - e.g. `handleChange`, `handleClick`, `handleUserLogout`
