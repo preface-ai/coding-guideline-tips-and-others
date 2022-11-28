@@ -26,3 +26,14 @@ For Functions:
 - because your job is now to handle some event and make something happen in response to it. If you don't handle, no changes to the app state will be made
 
 To conclude, `on` is describing what actual event this will be tied to. `handle` is describing what will be called when that event fires.
+
+Example:
+
+```js
+const handleClick = (event) => {
+  doSomethingElseHere();
+  onClick(event);
+};
+
+return <button onClick={handleClick}>Bar</button>;
+```
