@@ -6,8 +6,14 @@ Example:
 
 ```js
 onAlertClick = { handleAlertClick };
-
 onFormSubmit = { handleFormSubmit };
+
+const handleClick = (event) => {
+  doSomethingElseHere();
+  onClick(event);
+};
+
+return <button onClick={handleClick}>Bar</button>;
 ```
 
 **For Props:**
@@ -23,12 +29,3 @@ onFormSubmit = { handleFormSubmit };
 To conclude, `on` is describing what actual event this will be tied to. `handle` is describing what will be called when that event fires.
 
 Example:
-
-```js
-const handleClick = (event) => {
-  doSomethingElseHere();
-  onClick(event);
-};
-
-return <button onClick={handleClick}>Bar</button>;
-```
