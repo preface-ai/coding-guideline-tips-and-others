@@ -4,6 +4,8 @@ Suggest to use create reusable function when you need to use the same group of c
 
 Javascript functions allow you to create reusable blocks of code with specific names and behaviors so you don’t have to repeat the same thing multiple times, which is extremely helpful for code readability and maintenance.
 
+This is called as **_Abstraction_**. Its definition is: There are portions of a large component or application that can be taken away, made into their own functional component and then imported into the larger component.
+
 Example:
 
 ```js
