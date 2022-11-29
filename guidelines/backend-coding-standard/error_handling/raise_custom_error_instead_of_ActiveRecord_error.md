@@ -1,6 +1,6 @@
-# Avoid raising ActiveRecord error in controller level
+# Raise custom error instead of ActiveRecord error
 # Description
-Avoid raising ActiveRecord error in controller level, raise custom error instead.
+Avoid raising ActiveRecord error manually, raise custom error instead.
 
 # Example
 ```ruby
@@ -16,9 +16,10 @@ end
 def update_password(old_password:)
   # ...
   raise PasswordIncorrectError unless user.valid_password?(old_password)
-  # PasswordIncorrectError is a custom error
+  # where `PasswordIncorrectError` is a custom error
 end
 ```
 
 # Reason
-- ActiveRecord error is responsible for error raised in model layer, it is intuitive that we should custom errors for controller level used.
+- ActiveRecord error is responsible for error raised in ActiveRecord, we should not raise it for other purposes.
+- A custom error should be created instead for your own purpose.

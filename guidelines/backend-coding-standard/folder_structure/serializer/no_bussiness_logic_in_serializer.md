@@ -1,38 +1,38 @@
 # No bussiness logic in serializer
 # Description
-No bussiness logic in serializer, should do it in contoller / module level.
+Serializer should contain logic to transform and massage different attribute into expected shape based on our API design.
+It shouldn't contain any business logic in it, they should live within module / service / modal level.
 
 # Example
 ```ruby
 # 🤔 Avoid this: 
-class SomeUserSerializer
-  attributes :user_status
+class SomeOrderSerializer
+  attributes :amount
 
-  def user_status
-    object.student? ? "student" : "not student status"
+  def amount
+    object.by_user.annual_pass_discount? ? object.final_amount_cents * 0.95 : object.final_amount_cents
   end
 end
 
 # 👍🏻 Suggest this:
-class SomeUserSerializer
-  attributes :user_is_student?
+class SomeOrderSerializer
+  attributes :amount
 end
 
 # and in contoller
 
 class SomeController
-  user = User.find_by(username: "user_name")
+  order = Order.find_by(id: xxx)
 
-  user.user_status = 
-    if user.student?
-      "student"
-    else
-      "not student status"
-    end
+  if order.by_user.annual_pass_discount?
+    order.amount = order.final_amount_cents * 0.95
+  else
+    order.amount = order.final_amount_cents
+  end
 
   serialized_course = ActiveModelSerializers::SerializableResource.new(
-      user,
-      serializer: SomeUserSerializer,
+      order,
+      serializer: SomeOrderSerializer,
     ).as_json
 end
 
