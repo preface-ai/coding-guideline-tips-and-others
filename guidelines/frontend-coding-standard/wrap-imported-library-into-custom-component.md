@@ -1,4 +1,4 @@
-# Encourage to wrap imported libraries & packages into custom components
+# Wrap imported libraries & packages into custom components
 
 It is better to wrap the imported external libraries and packages into the custom elements.
 
