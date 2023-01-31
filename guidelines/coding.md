@@ -102,7 +102,7 @@ for (let i = 0; i < 9; i++) {
 }
 ```
 
-## Follow progreamming language convention and be consistent
+## Follow programming language convention and be consistent
 
 ```ruby
 # in Ruby
