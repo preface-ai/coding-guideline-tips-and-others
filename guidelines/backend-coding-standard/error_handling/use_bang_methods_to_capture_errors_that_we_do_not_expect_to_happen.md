@@ -1,4 +1,4 @@
-# Ues bang methods to capture errors that we don't expect to happen.
+# Use bang methods to capture errors that we don't expect to happen.
 # Description
 Use bang methods to capture errors that we don't expect to happen.
 To be specified, use
