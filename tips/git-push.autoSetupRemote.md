@@ -4,13 +4,16 @@
 
 The `push.autoSetupRemote` feature in Git makes it easy to push your changes to a default remote branch without having to specify the remote and branch names each time you push.
 
-For example, let's say you're working on a short-lived feature branch and you want to push your changes to the remote repository. Normally, you would need to specify the remote branch name each time you push, like this:
+For example, let's say you're working on a short-lived feature branch and you want to push your changes to the remote repository for submiting PR. 
+Normally, you would need to specify the remote branch name each time you push, like this:
 
 ```
 git push --set-upstream origin feature-branch
 ```
 
-With `push.autoSetupRemote` enabled, you can simply run `git push` and Git will automatically push your changes to the default upstream branch. Time saved 😎.
+With `push.autoSetupRemote` enabled, you can simply run `git push` and Git will automatically push your changes to the default upstream branch.
+
+## Here are the TLDR; 👀
 
 To enable this feature, simply run the following command in your Git repository:
 
@@ -23,6 +26,8 @@ Once enabled, you can now push your changes using the following command:
 ```
 git push
 ```
+
+Time saved 😎.
 
 Git will automatically determine the remote and branch to push to based on the current branch you're on and the default upstream branch.
 
