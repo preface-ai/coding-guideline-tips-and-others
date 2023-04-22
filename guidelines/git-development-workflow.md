@@ -10,88 +10,82 @@ tags:
 
 ## Terminology
 
-### Trunk branch
+### Trunk branch 🌳
 
-- the main branch of the repository
-- in Github, it should be the default branch and it normally named as `main`
-- for legacy issue, the trunk branch of following repository have different naming:
-  - https://github.com/preface-ai/preface-website-frontend
-    - Trunk branch `develop`
-  - https://github.com/preface-ai/preface-nomad-b
-    - Trunk branch `development`
+- The main branch of the repository.
+- In Github, it should be the default branch and it is usually named `main`.
+- Some repositories may have different names for the trunk branch due to legacy issues.
+  - https://github.com/preface-ai/preface-website-frontend -> Trunk branch `develop`
+  - https://github.com/preface-ai/preface-nomad-b -> Trunk branch `development`
 
 ## Suggested Git Development Workflow
 
-### Make sure your local trunk branch is in sync with remote
+To ensure that development with Git is organized and effective, follow these steps:
 
-- Make sure you are at the trunk branch first
-  ```bash
-    git checkout main
-    # please replace main with develop or development accordingly if you work on specific repository
+### Ensure your local trunk branch is in sync with remote 🔄
+
+- Make sure you are on the trunk branch by running:
+  `````bash
+  git checkout main
   ```
-- pull the latest code from remote
-  ```bash
-    git pull
+  - Replace `main` with `develop` or `development` depending on the repository.
+- Pull the latest code from remote by running:
+  ````bash
+  git pull
   ```
-- ⭐️ Advance Tips:
-  - If you know git well enough, you can create and checkout your feature branch from latest remote `main` branch driectly without touching your local `main` branch
-  - Feel free to do it in alternative way if you know exactly what you are doing.
+- ⭐️ Advanced tip
+  - You can create and checkout your feature branch from the latest remote `main` branch directly without touching your local `main` branch if you know Git well enough.
 
-### Create & Checkout a new feature branch
+### Create and checkout a new feature branch 🌟
 
-- run this
-  ```bash
-    git checkout -b your-feature-branch-name
+- Run this command to create and checkout a new feature branch:
+  ````bash
+  git checkout -b your-feature-branch-name
   ```
-  - please replace `your-feature-branch-name` with your target feature branch naming
-  - make sure the branch name is unique and easy to understand.
+  - Replace `your-feature-branch-name` with your desired branch name.
+  - Ensure that the branch name is unique and easy to understand.
 
-### Work on your code change on the feature branch
+### Work on your code change on the feature branch 🚀
 
-- Try to split your task into multiple milestone and focus on single milestone each time
-- when current milestone is complete, feel free to commit your code change in your local.
-- you can leverage your IDE(VS Code is our recommended IDE) to add & commit your code change interactively, or...
-- you can use [`git add`](https://git-scm.com/docs/git-add) & [`git commit`](https://git-scm.com/docs/git-commit) to commit your code change if you want to go hardcore 👩🏼‍🎤
-- you can have as many commits as you want because at the end they will become a single squashed commit after merge via Pull Request
+- Split your task into multiple milestones and focus on a single milestone each time.
+- When a milestone is complete, commit your code change in your local repository.
+- Use your IDE (VS Code is recommended) to add and commit your code change interactively, or use [`git add`](https://git-scm.com/docs/git-add)  and [`git commit`](https://git-scm.com/docs/git-commit) to commit your code change.
+- You can have as many commits as you want because they will be squashed into a single commit after the merge via pull request.
 
-### Push your local feature branch to remote
+### Push your local feature branch to remote 📤
 
-- When you finish all your milestone of the task, you can run following to push all of your commit in local feature branch to remote
-
-```bash
-git push --set-upstream origin your-feature-branch-name
-
-# In fact, you can just type `git push`, git will do nothing but hint you with the same command above.
-# this setting give you a option to change the remote branch name(branch name between local and remote are not necessary be the same)
-```
-
-- Alternatively, you can update your git config [push.autoSetupRemote](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote) to always set upstream with the same branch naming. You can just `git push` all alone after this change:
-  ```bash
-  git config --global --add --bool push.autoSetupRemote true
+- After you finish all the milestones of the task, push all your commits in the local feature branch to remote:
+  ````bash
+  git push --set-upstream origin your-feature-branch-name
   ```
-- Tips: If you already set your local feature branch to with the remote but you still want to commit new change:
-  - you can still do it and push the change to remote again via `git push`
+  - Alternatively, you can update your git config `push.autoSetupRemote` to always set upstream with the same branch naming. You can just `git push` after this change:
+    ```bash
+    git config --global --add --bool push.autoSetupRemote true
+    ```
+- If you already set your local feature branch to the remote but want to commit new changes, you can still do it and push the change to remote again via `git push`.
 
-### Submit a Pull Request(PR) to trunk branch
+### Submit a Pull Request (PR) to trunk branch 🚀
 
-- After you feature branch get push to remote, you should be able to find your branch on github
-- You can than create a pull request from your branch to the trunk `main`
-- Make sure you provide:
-  - Meaningful title of the Pull request. Suggest include Clickup ID if the task is related to a Clickup ticket
-  - Briefly explain what & why this PR is for, if the repository you are working on have a pull request template, make sure to follow it.
-  - Annotate yourself as the assignee
+- After you push the feature branch to remote, create a pull request from your branch to the trunk branch `main`.
+  - you can do it via github website or use `gh` command line tool(recommended)
+- Provide a meaningful title for the pull request.
+- Include the Clickup ID in the title if the task is related to a Clickup ticket.
+- Briefly explain what and why this PR is for.
+- Usually there is a checklist in the default pull request template, follow it and see if you have missed out anything.
+- Annotate yourself as the assignee.
 
-### Request Code review & update your code based on feedback
+### Request Code review and update your code based on feedback 🔍
 
-- Annotate your code reviewer in the Pull Request
-- Please send the link of this PR to your targeted Code Reviewer via our Slack Channel `team-tech`
-- Wait until your coder reviewer have left you feedback of the code(async-ly in the PR, or provided face-to-face)
-- Based on the feedback, if you need further code change, you can keep working on the same branch on your local and commit it.
-- Tips: No worry, whenever you commit and push your code change again, it will get reflected instantly to the same Pull Request👍🏻
+- Annotate your code reviewer in the pull request.
+- Send the link of this pull request to your targeted code reviewer via the Slack channel `#team-tech`.
+- Wait for your code reviewer to provide feedback on the code, asynchronously or face-to-face.
+- Based on the feedback, if you need to make further code changes, keep working on the same branch in your local repository and commit the changes.
+- Whenever you commit and push your code change again, it will get reflected instantly in the same pull request.
 
-### 🏁 Squash & Merge your Pull request to Trunk branch
+### 🏁 Squash and merge your Pull Request to Trunk branch
 
-- Once your Code reviewer approved your code change, you are free to merge this Pull request to the trunk branch
-- Please make sure using `Squash & merge` option to do the merge.
-- Why?
-- please google search the different between 3 Pull requests merge options `merge`, `Rebase & merge`, `Squash & merge` 😉
+- Once your code reviewer approves your code change, merge this pull request to the trunk branch.
+- Must-do: We use `Squash & merge` to do the merge among the 3 different merge methods(`merge`, `Rebase & merge`, `Squash & merge`) provided by Github.
+- This is because squashing commits helps keep the Git history clean and easy to follow.
+
+By following this Git development workflow, you can ensure that your code changes are organized, effective, and easy to review and merge. 🙌
