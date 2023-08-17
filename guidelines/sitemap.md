@@ -67,7 +67,7 @@ const { Octokit } = require('@octokit/rest');
 const get = require('axios');
 
 // Set the GitHub personal access token
-const githubToken = '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';
+const githubToken = 'ghp_XXXXXXXXXXXXXXXXXXXXX';
 
 // Set the GitHub repository owner and name
 const repositoryOwner = 'preface-ai';
