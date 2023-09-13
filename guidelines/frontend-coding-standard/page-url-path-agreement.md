@@ -8,12 +8,12 @@ These are our agreement:
 
 e.g.
 ```
-# perfer this
+# perfer this ✅
 app.preface.ai/purchase/member-plus
 
-# don't do this
+# don't do this ❌
 app.preface.ai/Purchase/MemberPlus
-# or not ever this
+# or not ever this ❌
 app.preface.ai/purchase/member_plus
 ```
 
