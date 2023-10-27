@@ -2,7 +2,7 @@
 
 In Next.js 13, there are a new `next/image` and `next/link` which allow faster with native browser lazy loading, and simplified API with automatic <a> respectively.
 
-For the existing codes, you have to use `next/legacy/image` and `next/legacy/link` to prevent those components bein destroyed.
+**For the existing codes, you have to use `next/legacy/image` and `next/legacy/link` to prevent those components bein destroyed.**
 
 ## next/image
 
