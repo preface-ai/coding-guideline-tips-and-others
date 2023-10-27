@@ -37,4 +37,4 @@ For the existing codes, you have to use `next/legacy/image` and `next/legacy/lin
 </Link>
 ```
 
-As seen in the above example, next/link no longer requires manually adding <a> as a child.
+As seen in the above example, next/link no longer requires manually adding `<a>` as a child.
