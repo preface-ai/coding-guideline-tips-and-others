@@ -1,4 +1,4 @@
-# Naming Convention
+# Placeholder admin account in admin notifications
 # Description
 There will be a placeholder admin account (id should be encapsulate in `User` modal), which is used to receive all admin notifications.
 
