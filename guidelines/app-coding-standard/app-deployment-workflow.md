@@ -10,6 +10,13 @@
 
 - Currently we are still updating v1.0.9 when the latest app version has already been v1.0.11. When we roll out more version, we should consider when to give up the old versions, otherwise, we will have many efforts when doing EAS update.
 
+#### Access to preface app version dashboard
+
+[Preface app version dashboard](https://data.preface.ai/dashboard/197-preface-app-version-dashboard)
+
+- This dashboard is used to track the app version usage of iOS and Android. (i.e.: how many users are using the app with the version)
+- It should help us to decide which version should be omitted for any updates.
+
 #### Actions:
 
 1. Review the app version usages in ios and android before the weekly EAS update
