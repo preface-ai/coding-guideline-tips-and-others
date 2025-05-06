@@ -62,3 +62,9 @@ Version numbers are structured as `MAJOR.MINOR.PATCH`.
   - TODO: Currently we do not have a set rule for when to build a major version.
   - Increment the **MAJOR** version and reset both the **MINOR** and **PATCH** versions to `0`: `1.0.0` → `2.0.0`.  
 
+
+#### Misc
+
+- **Google Play**:
+  - Deployment
+    - When deploying to Android via the play console, sometimes you might come across an error stating that there are missing values in the manifest file. Google looks into *all* active bundles in production and testing(open, closed, internal). So if there are any active old versions without the value we must deploy newer versions into the testing environment as well. 
